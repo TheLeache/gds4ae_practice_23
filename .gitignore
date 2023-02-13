@@ -14,3 +14,4 @@
 .fdb*
 .aux
 .tiff
+.tex_stuff/*
