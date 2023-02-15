@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>session1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>session2_download_data_example</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14573,259 +14573,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Practice-Session-I">Practice Session I<a class="anchor-link" href="#Practice-Session-I">&#182;</a></h1><p>My e-mail: <a href="mailto:alvaro.sanchez@cemfi.edu.es">alvaro.sanchez@cemfi.edu.es</a></p>
-<h2 id="1.-JupyterLab">1. JupyterLab<a class="anchor-link" href="#1.-JupyterLab">&#182;</a></h2><h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h3><p><em>Jupyter</em> = open-source software project developping services for interactive computing across different programming languages (core: <strong>Ju</strong>lia, <strong>Py</strong>thon, <strong>R</strong>)</p>
-<p><em>Jupyter Notebook</em> = web-based application you can run on your browser to create "notebooks" - single files that contain everything you need in a data workflow (more on this later)</p>
-<p><a href="https://jupyterlab.readthedocs.io/en/stable/"><em>JupyterLab</em></a> (what we are using here) = evolution of Jupyter Notebook</p>
-<h3 id="Set-up">Set-up<a class="anchor-link" href="#Set-up">&#182;</a></h3><p>Please make sure you have followed the <a href="https://gdsl-ul.github.io/soft_install/https://gdsl-ul.github.io/soft_install/">installation instructions</a>. Note that you should install gds version 8.0, not 6.1, that's a typo in the webpage.</p>
-<p>If, for whatever reason, you did not manage to install everything or something is not working during the class, you can use <a href="https://darribas.org/gds4ae/content/pages/infrastructure.html">Binder</a> to follow the lecture. Note that there is no way to save any changes you make to your local machine using Binder.</p>
-<p>For this course, we are using a virtual container on <strong>Docker</strong>. Basically, what that means is that you don't need to install Python or any libraries on your local machine. It ensures that everyone can run the code in the same environment.</p>
-<h3 id="To-run-Python-on-JypyterLab-through-Docker:">To run Python on JypyterLab through Docker:<a class="anchor-link" href="#To-run-Python-on-JypyterLab-through-Docker:">&#182;</a></h3><ol>
-<li>Open the terminal of your computer: Terminal (for Mac) or PowerShell (for windows) and choose the base folder where you want to initialize Jupyter Notebook. For example, imagine I have the notebooks I want to run on Google Drive (Drive letter G:) in a folder called <code>stuff_for_gds4ae</code>:
-Then, I would run:</li>
-</ol>
-<p><code>G:</code></p>
-<p>and then:</p>
-<p><code>cd stuff_for_gds4ae</code></p>
-<p>This will define which is the <code>work</code> directory that will come up later. If you have uglier folder systems, you should put them between brackets, for instance, in my case I have to write:</p>
-<p><code>H:</code></p>
-<p><code>cd 'My Drive\CEMFI\2022_PhD\gds4ae_practice_23'</code></p>
-<ol>
-<li>After this, we are ready to run docker. Copy the following command in your Terminal (for Mac) or PowerShell (for Windows):</li>
-</ol>
-<p><code>docker run --rm -ti -p 8888:8888 -v ${PWD}:/home/jovyan/work darribas/gds:8.0</code></p>
-<p><img src=".jpgs/docker_run.jpg" alt="docker_run1.jpg"></p>
-<ol>
-<li>Open <code>localhost:8888</code> in your browser and paste the token shown in the output text of the terminal.</li>
-</ol>
-<p><img src=".jpgs/docker_run_two.jpg" alt="docker_run1.jpg"></p>
-<p>Don't close either docker nor the terminal while your session is running. If you do, it will automatically expire, kernels are shut down and all unsaved changes will be lost.</p>
-<h3 id="Running-Jupyter-Lab-if-you-installed-it-natively-in-Anaconda">Running Jupyter Lab if you installed it natively in Anaconda<a class="anchor-link" href="#Running-Jupyter-Lab-if-you-installed-it-natively-in-Anaconda">&#182;</a></h3><p>If you are on Windows Home and you cannot use WSL and Docker, you must have installed the <code>gds</code> environment natively. Don't worry, most likely you will have no problems (It's a tradeoff between compatibility and convenience), but for you the procedure is a bit different:</p>
-<ol>
-<li>Open the Anaconda terminal (Anaconda Powershell Prompt in Windows)</li>
-</ol>
-<p><img src=".jpgs/anaconda_terminal.jpg" alt="anaconda_terminal.jpg"></p>
-<ol>
-<li>Type: </li>
-</ol>
-<p><code>conda activate gds</code></p>
-<ol>
-<li>As before, choose your drive and directory:</li>
-</ol>
-<p><code>G:</code></p>
-<p><code>cd stuff_for_gds4ae</code></p>
-<ol>
-<li>Type:</li>
-</ol>
-<p><code>jupyter notebook</code></p>
-<p>And you should get a link to paste into your browser</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Using-Jupyter-Notebooks-with-Visual-Studio-Code">Using Jupyter Notebooks with Visual Studio Code<a class="anchor-link" href="#Using-Jupyter-Notebooks-with-Visual-Studio-Code">&#182;</a></h3><p>Jupyter notebooks run on a browser interface by default. This is alright, but I'm not a big fan. Thankfully, you can run Jupyter Notebooks in Visual Studio Code, the most popular IDE today, with a few extra steps, and you will get a lot of convenient features like code highlighting, autocompletion, help when you hover the cursor over function calls, and more.</p>
-<p>You can install Visual Studio Code from <a href="https://code.visualstudio.com/">its website</a>. Then, you should install the Jupyter Extension from the Extensions marketplace:</p>
-<p><img src=".jpgs/jupyter_extension.jpg" alt="jupyter_extension.jpg"></p>
-<p>You can use VSCode to work on notebooks both from a "remote" session (i.e. if you installed the GDS environment through Docker) or from a local session (If you had to do a local Anaconda installation)</p>
-<ol>
-<li>First, it is useful to choose your directory as your folder in VSCode when you start a session. You should hit  <code>File -&gt; Open Folder</code> and from there browse to the base directory where your project is located so that you can open your source files from within VSCode. You will get something that looks like this:</li>
-</ol>
-<p><img src=".jpgs/folder.jpg" alt="folder.jpg"></p>
-<ol>
-<li>Once this is done, we have two paths:</li>
-</ol>
-<h3 id="If-you-are-using-the-Docker-installation">If you are using the Docker installation<a class="anchor-link" href="#If-you-are-using-the-Docker-installation">&#182;</a></h3><ol>
-<li><p>Follow the steps of starting a Jupyter Notebook session up to the point where you get the link that you are supposed to paste in your browser.</p>
-</li>
-<li><p>Press  <code>Ctrl + Shift + P</code> in VSCode, and in the search bar, type and select: <code>Jupyter: Specify Jupyter Server for Connections</code></p>
-<ol>
-<li><p><img src=".jpgs/jupyter_search.JPG" alt="jupyter_search.jpg"></p>
-</li>
-<li><p><img src=".jpgs/existing_url.JPG" alt="existing_url.jpg"></p>
-</li>
-<li><p><img src="URL_pasted.JPG" alt="URL_pasted.JPG!"></p>
-</li>
-</ol>
-</li>
-<li><p>Open one of your notebooks in the directory from VSCode, now, in the top-right corner, you should have an option to choose a Jupyter Kernel:</p>
-<ol>
-<li><p><img src=".jpgs/option_choose_kernel.JPG" alt="option_choose_kernel.jpg"></p>
-</li>
-<li><p>Once you click on that, you will get a list of available Jupyter kernels. Since you have pasted the URL for your remote kernel in the right place, it should appear on the list:</p>
-<p><img src=".jpgs/remote_jupyter_kernel.JPG" alt="remote_jupyter_kernel.jpg"></p>
-</li>
-</ol>
-</li>
-<li><p>Once all of this is done, you are ready to go, your notebook will execute in the environment that you installed in Docker.</p>
-</li>
-</ol>
-<h3 id="If-you-had-to-do-a-native-Anaconda-installation">If you had to do a native Anaconda installation<a class="anchor-link" href="#If-you-had-to-do-a-native-Anaconda-installation">&#182;</a></h3><p>In this case, things are easier: When you open the notebook, on the top-right corner, you should have <code>gds</code> in your list of available Jupyter servers, without the need to intialize the Jupyter kernel. Alternatively, you can initialize the Jupyter kernel from the Anaconda prompt, and use its URL in VSCode as if it were a remote Jupyter kernel.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="JupyterLab-Interface-Tour">JupyterLab Interface Tour<a class="anchor-link" href="#JupyterLab-Interface-Tour">&#182;</a></h3><p>The JupyterLab Interface provides flexible building blocks for interactive computing.</p>
-<p>The main interface includes a main work area, a side bar on the left and a menu bar up top.</p>
-<p><img src=".jpgs/interface.jpg" alt="interface.jpg"></p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Main-work-area">Main work area<a class="anchor-link" href="#Main-work-area">&#182;</a></h4><p>This is where different kinds of documents and files are displayed in tabs (default) or panels. On start-up, you always see the <strong>launcher tab</strong> where you can select the type of file you want to create, depending on the number of kernels installed.</p>
-<blockquote><p>Kernel = separate process that runs your code in different programming languages</p>
-</blockquote>
-<p>You can always open a new launcher tab by clicking <code>File&gt;New Launcher</code> in the menu bar or the blue "+" button top left.</p>
-<p>These are the formats you can open from the launcher:</p>
-<ul>
-<li><strong>Notebook</strong>: main document we will be working with (more on this later)</li>
-<li><strong>Console</strong>: allows to run code interactively, execute commands with <code>Shift + Enter</code></li>
-<li><strong>Terminal</strong>: <ul>
-<li>provides full support of system shells/PowerShell</li>
-<li>runs on same system as Jupyter server (here: virtual container)</li>
-<li>type <code>pip list</code> to see packages installed</li>
-<li>install and update other packages as needed</li>
-</ul>
-</li>
-<li>Text editor</li>
-<li>Markdown file</li>
-<li><strong>Contextual help</strong><ul>
-<li>does not show anything when launched but whenever you type or double click on an object or command in the notebook, it will interactively show you the description or help file, respectively</li>
-<li>another way to directly display the documentation is adding a <code>?</code> behind a command</li>
-</ul>
-</li>
-</ul>
-<p>In the main work area you can also open any kind of media (e.g. images, pdf, html, tex) and raw data files in CSV format.</p>
-<p>Importantly, you can customize your workspace in any way you want: every tab can be rearranged and resized. Just <strong>drag and drop</strong> tabs to split windows in different ways.</p>
-<p>You can also simultaneously view the same file or even just the output of a single cell in an extra window if you want to keep it for reference by right clicking on the tab or cell in question and open <code>New View</code>.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Side-panel">Side panel<a class="anchor-link" href="#Side-panel">&#182;</a></h4><p>Can be toggled off if you need more space by just clicking on the active tab.</p>
-<p>As you can see there are several tabs:</p>
-<ul>
-<li><strong>File Browser</strong><ul>
-<li>browse and open files</li>
-<li>files you create always shop up in the current folder you are in, which is then set as the working directory of that file</li>
-<li>type <code>%pwd</code> to see what directory you are in</li>
-<li><code>\home\jovyan</code> is a workspace that only exists within the docker image</li>
-<li>always save your files inside the <code>work</code> directory</li>
-<li>if you have created a notebook outside and later put it in aother folder, you can adjust the directory by typing <code>%cd "/home/jovyan/work/&lt;your path on local machine&gt;</code> (see top line in launcher)</li>
-</ul>
-</li>
-<li>Running Terminals and Kernels: check running sessions</li>
-<li>Table of Contents: shows markdown structure of notebooks</li>
-<li>Extension Manager</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Menu-bar">Menu bar<a class="anchor-link" href="#Menu-bar">&#182;</a></h4><p>Top level menu with several options</p>
-<ul>
-<li><code>File</code> : create, save and export files<ul>
-<li>notebooks can be converted to a number of open standard output formats (e.g. HTML, LaTeX, PDF) through <code>Export Notebook As</code> </li>
-</ul>
-</li>
-<li><code>Kernel</code>: restart kernel if necessary</li>
-<li><code>Settings</code>: change keystroke to execute commands, font size etc.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Jupyter-Notebooks">Jupyter Notebooks<a class="anchor-link" href="#Jupyter-Notebooks">&#182;</a></h3><p>Main vehicle we will use to communicate content of the course and create code. Documents that combine live runnable code with narrative text and rich output (e.g. interactive visualizations).</p>
-<blockquote><p>Notebooks have a ".ipynb" extension.</p>
-</blockquote>
-<p>Notebooks are structured as an ordered list of <strong>cells</strong>, which keep your data, thoughts and code in little containers.</p>
-<p>A few tips on how to handle, create and manipulate cells, including the most important <strong>keyboard short-cuts</strong>:</p>
-<ul>
-<li>active/selected cells have a blue bar next to them</li>
-<li>switch from Edit Mode to Command Mode by pressing <code>Esc</code></li>
-<li>switch from Command Mode to Edit Mode by pressing <code>Enter</code></li>
-<li>use arrow keys to navigate in Command Mode</li>
-<li><code>b</code> create below, <code>a</code> create above</li>
-<li><code>c</code> copy, <code>v</code> paste, <code>x</code> cut</li>
-<li><code>dd</code> (pressing d twice) delete</li>
-<li><code>z</code> undo, <code>Shift + z</code> redo</li>
-<li><code>m</code> change cell type to Markdown, <code>y</code> change to code</li>
-<li>run cells by hitting <code>Control + Enter</code> or <code>Shift + Enter</code></li>
-<li>select multiple cells with <code>Shift + J</code></li>
-</ul>
-<p>There are two types of cells: Code and Markdown.</p>
-<h4 id="Code-cells">Code cells<a class="anchor-link" href="#Code-cells">&#182;</a></h4><p>The language used for code is that of the kernel: Python 3. When running a code cell, JupyterLab takes the code, sends it to the Pytho interpreter, who is sending back the result and prints the <strong>output</strong> directly below the cell.</p>
-<p>The square brackets next to the cell, e.g. <code>[1]</code>, indicates the <strong>execution order</strong> of your code.</p>
-<blockquote><p>The notebook is running on the same kernel, so whatever you code in a single cell is true for the whole notebook <em>according to this order</em>.</p>
-</blockquote>
-<p>You can collapse the output by clickin on the blue bar next to it. <code>Shift + L</code> toggles code line numbers within cells.</p>
-<h4 id="Markdown-cells">Markdown cells<a class="anchor-link" href="#Markdown-cells">&#182;</a></h4><p>When running a Markdown cell, the text will be rendered as stylized text using standard Markdown syntax. This is a really easy way to format text.</p>
-<p>Basic syntax (more <a href="https://www.markdownguide.org/basic-syntax/">here</a>):</p>
-<ul>
-<li>titles and subtitles with <code>#</code></li>
-<li>bold <code>** text **</code>, italic <code>* text*</code></li>
-<li>ordered list using <code>1.</code>, <code>2.</code>, <code>3.</code> etc.</li>
-<li>unordered lists using <code>-</code></li>
-<li>horizontal rule <code>---</code></li>
-<li>`inline code`</li>
-<li>equations using latex syntax <code>$ math $</code>, e.g. $x^2$</li>
-<li>add <code>\</code> to avoid formatting</li>
-</ul>
-<h4 id="Save-and-Close">Save and Close<a class="anchor-link" href="#Save-and-Close">&#182;</a></h4><p>You can save your notebook with <code>Control + S</code>. This will save code and output but if you shut down the kernel anything you create on-the-fly (e.g. defining variables) will not be readily available if you open the notebook again, unless you run the respective cells.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.-Python-Programming-Essentials">2. Python Programming Essentials<a class="anchor-link" href="#2.-Python-Programming-Essentials">&#182;</a></h2><p>We are now ready to start learning the Python language itself.</p>
-<h3 id="Basic-Syntax">Basic Syntax<a class="anchor-link" href="#Basic-Syntax">&#182;</a></h3>
+<h4 id="Example:-Downloading-and-writing-to-disk-a-raster-map">Example: Downloading and writing to disk a raster map<a class="anchor-link" href="#Example:-Downloading-and-writing-to-disk-a-raster-map">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14837,9 +14585,15 @@ Then, I would run:</li>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># comments start with #</span>
-<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;hola mundo&#39;</span> <span class="c1"># use &#39;&#39; or &quot;&quot; for strings</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><span class="o">,</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gp</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">rasterio</span>
+<span class="kn">from</span> <span class="nn">rasterio.windows</span> <span class="kn">import</span> <span class="n">Window</span>
+<span class="kn">from</span> <span class="nn">rasterio.enums</span> <span class="kn">import</span> <span class="n">Resampling</span>
+<span class="kn">from</span> <span class="nn">rasterio.warp</span> <span class="kn">import</span> <span class="n">calculate_default_transform</span><span class="p">,</span> <span class="n">reproject</span><span class="p">,</span> <span class="n">Resampling</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
+<span class="kn">from</span> <span class="nn">rasterio.windows</span> <span class="kn">import</span> <span class="n">from_bounds</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 </pre></div>
 
      </div>
@@ -14860,2247 +14614,8 @@ Then, I would run:</li>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>hola mundo
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Primitive-Data-Types">Primitive Data Types<a class="anchor-link" href="#Primitive-Data-Types">&#182;</a></h4><p>Variables in Python don't need to be declared, just used for the first time, and can change their type when overwritten.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">2.5</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="n">v</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;int&#39;&gt;
-&lt;class &#39;float&#39;&gt;
-&lt;class &#39;bool&#39;&gt;
-False
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">v2</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span> <span class="c1"># boolean arithmetic</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Containers">Containers<a class="anchor-link" href="#Containers">&#182;</a></h4><p>Collection of objects</p>
-<h5 id="Lists-and-Tuples">Lists and Tuples<a class="anchor-link" href="#Lists-and-Tuples">&#182;</a></h5>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ϵ</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># creates an empty list, type \epsilon + tab to automatically get mathematical symbol</span>
-<span class="n">ϵ</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">]</span> <span class="c1"># can combine different data types</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>list</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span> <span class="c1"># adding a value to a list</span>
-<span class="n">x</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[10, &#39;foo&#39;, False, 2.5]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Note: Lists in Python are <strong>zero-based</strong>, so the first element is referenced by <code>x[0]</code></p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>10</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Lists are "mutable" which means they can still be altered after creation</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># assigning new value using index</span>
-<span class="n">y</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[10, 2]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Tuples are "immutable" lists, i.e. the object cannot be changed.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="o">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
-<span class="n">h</span><span class="p">:</span>\<span class="n">My</span> <span class="n">Drive</span>\<span class="n">CEMFI</span>\<span class="mi">2022</span><span class="n">_PhD</span>\<span class="n">gds4ae_practice_23</span>\<span class="n">session1</span><span class="o">.</span><span class="n">ipynb</span> <span class="n">Cell</span> <span class="mi">23</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">cell</span> <span class="n">line</span><span class="p">:</span> <span class="mi">1</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Both lists and tuples can be "unpacked"</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">integers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">integers</span>
-<span class="n">y</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>20</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To access multiple elements of a list or tuple, you can use Python's <strong>slice notation</strong>.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[4, 6]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Note: the general rule is that <code>a[m:n]</code> returns <code>n-m</code> elements, starting at <code>a[m]</code></p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[4, 6, 8]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># last two elements</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[6, 8]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;cemfi&#39;</span> 
-<span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># also works on strings</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;fi&#39;</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Sets-and-Dictionaries">Sets and Dictionaries<a class="anchor-link" href="#Sets-and-Dictionaries">&#182;</a></h5>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Frodo&#39;</span><span class="p">,</span><span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">33</span><span class="p">}</span> <span class="c1"># dictionaries are like lists but named instead of numbered</span>
-<span class="n">d</span><span class="p">[</span><span class="s1">&#39;mission&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;to take the Ring to Mount Doom&#39;</span> <span class="c1">#New key-value pairs are introduced to the dict like this</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>dict</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;name&#39;: &#39;Frodo&#39;, &#39;age&#39;: 33, &#39;mission&#39;: &#39;to take the Ring to Mount Doom&#39;}</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>33</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The names <code>'name'</code> and <code>'age'</code> are <em>keys</em> and the objects that they are mapped to are <em>values</em>.
-You can access keys and values using the <code>items()</code> method:</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The Hobbit&#39;s </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The Hobbit&#39;s name is Frodo
-The Hobbit&#39;s age is 33
-The Hobbit&#39;s mission is to take the Ring to Mount Doom
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Sets are unordered collections without duplicates.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">}</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>set</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">}</span>
-<span class="n">s1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;b&#39;}</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Note: you can look at all the variables you created by right-clicking somewhere in the notebook and selecting <code>Open Variable Inspector</code></p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Iterating">Iterating<a class="anchor-link" href="#Iterating">&#182;</a></h4><p>You can iterate over iterable objects (<code>list</code>, <code>tuple</code>, <code>dict</code>, <code>set</code>) using the <code>for</code> loop.</p>
-<blockquote><p>Note: Python knows the extent of the code block <em>only from indentation</em></p>
-</blockquote>
-<p>Importantly, you can loop without explicit indexing. For example:</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_values</span><span class="p">:</span> <span class="c1"># note syntax</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1
-4
-9
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Instead of:</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_values</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x_values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x_values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1
-4
-9
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Here is an example of looping over non-numerical objects:</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;bird&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The plural of </span><span class="si">{</span><span class="n">animal</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">animal</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The plural of dog is dogs
-The plural of cat is cats
-The plural of bird is birds
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You could do the same thing using the "list comprehension" tool of Python</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plurals</span> <span class="o">=</span> <span class="p">[</span><span class="n">animal</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span> <span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">]</span>
-<span class="n">plurals</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;dogs&#39;, &#39;cats&#39;, &#39;birds&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>zip()</code> allows you to step through pairs from two sequences:</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span><span class="s1">&#39;Korea&#39;</span><span class="p">,</span><span class="s1">&#39;China&#39;</span><span class="p">)</span>
-<span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Tokyo&#39;</span><span class="p">,</span><span class="s1">&#39;Seoul&#39;</span><span class="p">,</span><span class="s1">&#39;Beijing&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span><span class="n">cities</span><span class="p">):</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The capital of </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The capital of Japan is Tokyo
-The capital of Korea is Seoul
-The capital of China is Beijing
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If you actually need the index from a list, one option is to use <code>enumerate()</code></p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">letter_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">letter_list</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;letter_list[</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">]=&#39;</span><span class="si">{</span><span class="n">letter</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>letter_list[0]=&#39;a&#39;
-letter_list[1]=&#39;b&#39;
-letter_list[2]=&#39;c&#39;
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="A-pair-of-very-useful-iteration-packages:-itertools-and-tqdm">A pair of very useful iteration packages: <code>itertools</code> and <code>tqdm</code><a class="anchor-link" href="#A-pair-of-very-useful-iteration-packages:-itertools-and-tqdm">&#182;</a></h4><p>Sometimes you want to nest several for loops or combine them with a progress bar such as <code>tqdm</code>. The package <code>itertools</code> provides ways to combine iterables so that you can have cleaner code. For instance, imagine you want to print all combinations of city and country: we could write</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">)</span>
-</pre></div>
-<p>or we could use the <code>itertools</code> product function that is integrated into tqdm and write:</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.contrib.itertools</span> <span class="kn">import</span> <span class="n">product</span> <span class="k">as</span> <span class="n">tqdmproduct</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="n">printstring</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">tqdmproduct</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">cities</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;combining cities and countries&quot;</span><span class="p">):</span>
-    <span class="n">printstring</span> <span class="o">=</span> <span class="n">printstring</span> <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">printstring</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
-<pre>combining cities and countries:   0%|          | 0/9 [00:00&lt;?, ?it/s]</pre>
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-Tokyo, Japan
-Seoul, Japan
-Beijing, Japan
-Tokyo, Korea
-Seoul, Korea
-Beijing, Korea
-Tokyo, China
-Seoul, China
-Beijing, China
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Comparisons-and-Logical-Operators">Comparisons and Logical Operators<a class="anchor-link" href="#Comparisons-and-Logical-Operators">&#182;</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-<span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Assignment</span>
-<span class="n">x</span> <span class="o">==</span> <span class="mi">2</span> <span class="c1"># Comparison</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="s1">&#39;g&#39;</span> <span class="ow">in</span> <span class="s1">&#39;foo&#39;</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="s1">&#39;g&#39;</span> <span class="ow">in</span> <span class="s1">&#39;foo&#39;</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s1">&#39;g&#39;</span> <span class="ow">in</span> <span class="s1">&#39;foo&#39;</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>-1
-1
--1
-1
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;negative&#39;</span>
-    <span class="k">return</span> <span class="s1">&#39;nonnegative&#39;</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;nonnegative&#39;</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#Function with default positional inputs</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>3</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>14</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Object-oriented-programming-in-Python:">Object-oriented programming in Python:<a class="anchor-link" href="#Object-oriented-programming-in-Python:">&#182;</a></h4><p>Python is an object-oriented language. This feature is heavily used by the most common scientific packages like Pandas, Numpy, or the GIS packages that you use.</p>
-<p>In OOP languages, objects belong to classes, which have "attributes" and "methods". For example, below we define the classes "Human" and "Dog".</p>
-<p>"Attributes" are pieces of information that we attach to an object. For the class "Dog" it is things like its breed, name, color, and so on. For a geographic dataset, it might be things like the geographic projection, dimensions, the index, and more. Later on, to get the breed of the dog named Milu, we type  <code>Milu.breed</code>.</p>
-<p>"Methods" are functions that we attach to objects belonging to a given class, and which might allow them to interact with other objects of the same of different classes. 
-For instance, Numpy arrays have a method <code>np.array.mean()</code>. If you want to calculate the mean of a Numpy array, this is the efficient way to do so. For example:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">myarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
-<span class="n">myarray</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-<p><code>4.833333333333333</code></p>
-<p>If I want to compute the mean of the array along its columns, I will add the <code>**kwargs</code>: <code>axis = 0</code>:</p>
-<div class="highlight"><pre><span></span><span class="n">myarray</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-<p><code>array([3.5, 5.5, 5.5])</code></p>
-<p>Along the rows:</p>
-<div class="highlight"><pre><span></span><span class="n">myarray</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-<p><code>myarray.mean(axis = 1)</code></p>
-<p>Generally, any function that takes any complex object (i.e. any function and object in the typical libraries or packages) will be implemented in this way. Usually, utilizing the methods developed for a given object is much faster computationally than coming up with your own solution, so make sure to do your research about what methods have been implemented for your usage.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-classes-Human-and-Dog">The classes <code>Human</code> and <code>Dog</code><a class="anchor-link" href="#The-classes-Human-and-Dog">&#182;</a></h4><p>Here, we have a very simple example of two classes of object, <code>Human</code> and <code>Dog</code>, and the ways that they can interact through built-in methods.</p>
-<p>We first define <code>Human</code>. Humans have two attributes: their <code>name</code> and whether they are <code>tired</code> or not.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="k">class</span> <span class="nc">Human</span><span class="p">:</span>
-    <span class="n">animal</span> <span class="o">=</span> <span class="s1">&#39;Homo Sapiens&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>  
-        <span class="c1"># Instance Variable  </span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">=</span> <span class="kc">False</span>
-
-        <span class="c1">#Function that defines what to represent when typing `human`</span>
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">stri</span> <span class="o">=</span> <span class="s2">&quot;Human(&quot;</span>
-        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">stri</span> <span class="o">=</span> <span class="n">stri</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; : &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;_/ _ _ \_  </span>
-<span class="s2">(o / | \ o)</span>
-<span class="s2"> || o|o ||</span>
-<span class="s2"> | \_|_/ |</span>
-<span class="s2"> |  ___  |</span>
-<span class="s2"> | (___) |</span>
-<span class="s2"> |\_____/|</span>
-<span class="s2"> | \___/ |</span>
-<span class="s2"> \       /</span>
-<span class="s2">  \__ __/</span>
-<span class="s2">     U&quot;&quot;&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">stri</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span> 
-
-    <span class="c1">#Self-contained method: resting. Changes rested status</span>
-    <span class="k">def</span> <span class="nf">Rest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; has rested&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Come on, no need to rest!&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">Greet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anotherhuman</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; greets &#39;</span> <span class="o">+</span> <span class="n">anotherhuman</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-
-    <span class="c1">#function to walk, alone or with a dog!</span>
-    <span class="k">def</span> <span class="nf">Walk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="s1">&#39;dog&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">dog</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">]</span>
-            <span class="k">try</span><span class="p">:</span> 
-                <span class="c1">##This will fail if the creature you try to walk has no owner attribute, will go to the except</span>
-                <span class="k">if</span> <span class="n">dog</span><span class="o">.</span><span class="n">owner</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> is too tired to walk the dog&quot;</span><span class="p">)</span>
-                    <span class="k">else</span><span class="p">:</span> 
-                        <span class="k">if</span> <span class="n">dog</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; walks their &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">breed</span><span class="p">)</span>
-                        <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; walks &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">=</span> <span class="kc">True</span><span class="p">;</span> <span class="n">dog</span><span class="o">.</span><span class="n">tired</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="k">elif</span> <span class="ow">not</span> <span class="n">dog</span><span class="o">.</span><span class="n">owner</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">breed</span> <span class="o">+</span> <span class="s1">&#39; belongs to &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">owner</span> <span class="o">+</span> <span class="s1">&#39;, he does not trust &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">breed</span> <span class="o">+</span> <span class="s1">&#39; seems to have no owner, maybe you can pet it&#39;</span><span class="p">)</span>
-            <span class="k">except</span><span class="p">:</span> 
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> , you cannot walk a </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">animal</span><span class="si">}</span><span class="s2"> like they are a dog!&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span> 
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> takes a  stroll&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">Pet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dog</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">dog</span><span class="o">.</span><span class="n">animal</span> <span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">dog</span><span class="o">.</span><span class="n">owner</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">dog</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; pets their &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">breed</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; pets &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="n">dog</span><span class="o">.</span><span class="n">owner</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">dog</span><span class="o">.</span><span class="n">owner</span> <span class="o">==</span> <span class="kc">None</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; pets &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">owner</span> <span class="o">+</span> <span class="s2">&quot;&#39;s dog&quot;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span> 
-                <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; pets &#39;</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="n">breed</span> <span class="o">+</span> <span class="s1">&#39;, it seems to like them very much!&#39;</span><span class="p">)</span>
-                <span class="n">dog</span><span class="o">.</span><span class="n">setOwner</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span> 
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, you cannot pet a </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">animal</span><span class="si">}</span><span class="s2"> like they&#39;re a dog!&quot;</span><span class="p">)</span>
-
-<span class="n">Tintin</span> <span class="o">=</span> <span class="n">Human</span><span class="p">(</span><span class="s2">&quot;Tintin&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span> 
-    <span class="c1"># Class Variable  </span>
-    <span class="n">animal</span> <span class="o">=</span> <span class="s1">&#39;dog&#39;</span>      
-
-    <span class="c1"># The init method or constructor  </span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>  
-
-        <span class="c1"># Instance Variable  </span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>     
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="kc">None</span>   
-        <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">=</span> <span class="kc">False</span>
-
-    <span class="c1">#Function that defines what to print to the screen when asking for a dog class object</span>
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">stri</span> <span class="o">=</span> <span class="s2">&quot;Dog(&quot;</span>
-        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">stri</span> <span class="o">=</span> <span class="n">stri</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; : &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;  __      _</span>
-<span class="s2">o&#39;&#39;)}____//</span>
-<span class="s2"> `_/      )</span>
-<span class="s2"> (_(_/-(_/</span>
-<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">stri</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span> 
-
-    <span class="c1"># Adds an instance variable   </span>
-    <span class="k">def</span> <span class="nf">setColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>  
-        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>  
-
-    <span class="c1"># Retrieves instance variable      </span>
-    <span class="k">def</span> <span class="nf">getColor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span>     
-
-    <span class="c1">#Add another instance variable: Owner</span>
-    <span class="k">def</span> <span class="nf">setOwner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
-    <span class="k">def</span> <span class="nf">getOwner</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">owner</span>
-    <span class="c1">#And another: Name!!!</span>
-    <span class="k">def</span> <span class="nf">setName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="k">def</span> <span class="nf">getName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-
-    <span class="c1">#Self-contained method: barking</span>
-    <span class="k">def</span> <span class="nf">Bark</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ntimes</span><span class="p">):</span>
-        <span class="n">bark</span> <span class="o">=</span> <span class="s2">&quot;Woof! &quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">bark</span><span class="o">*</span><span class="n">ntimes</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">Rest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">+</span> <span class="s2">&quot; rested, he&#39;s ready to fight again&quot;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; rested, he&#39;s ready to fight again&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Come on, no need to rest!&#39;</span><span class="p">)</span>
-
-    <span class="c1">#function to fight with another dog</span>
-    <span class="k">def</span> <span class="nf">Fight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anotherdog</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tired</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">loser</span> <span class="o">=</span> <span class="bp">self</span><span class="p">;</span> <span class="n">winner</span> <span class="o">=</span> <span class="n">anotherdog</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">+</span> <span class="s1">&#39; was too tired to fight, he needs to rest!&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; was too tired to fight, he needs to rest!&#39;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">anotherdog</span><span class="o">.</span><span class="n">tired</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">winner</span> <span class="o">=</span> <span class="bp">self</span><span class="p">;</span> <span class="n">loser</span> <span class="o">=</span> <span class="n">anotherdog</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">+</span> <span class="s1">&#39; wins, the other dog was exhausted!&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; wins, the other dog was exhausted!&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">eps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
-            <span class="c1">#Who wins?</span>
-            <span class="k">if</span> <span class="n">eps</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span> <span class="n">winner</span> <span class="o">=</span> <span class="bp">self</span><span class="p">;</span> <span class="n">loser</span> <span class="o">=</span> <span class="n">anotherdog</span>
-            <span class="k">else</span><span class="p">:</span> <span class="n">winner</span> <span class="o">=</span> <span class="n">anotherdog</span><span class="p">;</span> <span class="n">loser</span> <span class="o">=</span> <span class="bp">self</span>
-            <span class="c1">#By how much?</span>
-            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="mf">0.5</span><span class="o">-</span><span class="n">eps</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.25</span><span class="p">:</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39; barely beats &#39;</span>
-            <span class="k">else</span><span class="p">:</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39; beats the shit out of &#39;</span>
-            <span class="c1">#Output</span>
-            <span class="k">if</span> <span class="n">winner</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">loser</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">winner</span><span class="o">.</span><span class="n">breed</span> <span class="o">+</span> <span class="n">text</span> <span class="o">+</span> <span class="n">winner</span><span class="o">.</span><span class="n">breed</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="n">winner</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">loser</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span> 
-                <span class="nb">print</span><span class="p">(</span><span class="n">winner</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="n">text</span> <span class="o">+</span> <span class="n">loser</span><span class="o">.</span><span class="n">breed</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="p">(</span><span class="n">winner</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">loser</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">):</span> 
-                <span class="nb">print</span><span class="p">(</span><span class="n">winner</span><span class="o">.</span><span class="n">breed</span> <span class="o">+</span> <span class="n">text</span> <span class="o">+</span> <span class="n">loser</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">winner</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="n">text</span> <span class="o">+</span> <span class="n">loser</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-        <span class="n">loser</span><span class="o">.</span><span class="n">tired</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">return</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Make a dog called Rodger:</span>
-<span class="n">Rodger</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;pug&quot;</span><span class="p">);</span> <span class="n">Rodger</span><span class="o">.</span><span class="n">setColor</span><span class="p">(</span><span class="s2">&quot;brown&quot;</span><span class="p">)</span>  
-<span class="c1"># Rodger.setName(&quot;Rodger&quot;)</span>
-<span class="n">Rodger</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  __      _
-o&#39;&#39;)}____//
- `_/      )
- (_(_/-(_/
-            
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Dog(breed : pug, name : None, color : brown, owner : None, tired : False, )</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Make a dog called Milu:</span>
-<span class="n">Milu</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Fox Terrier&quot;</span><span class="p">);</span> <span class="n">Milu</span><span class="o">.</span><span class="n">setColor</span><span class="p">(</span><span class="s2">&quot;White&quot;</span><span class="p">);</span> <span class="n">Milu</span><span class="o">.</span><span class="n">setOwner</span><span class="p">(</span><span class="s1">&#39;Tintin&#39;</span><span class="p">);</span> <span class="n">Milu</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s1">&#39;Milu&#39;</span><span class="p">)</span>
-<span class="n">Milu</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  __      _
-o&#39;&#39;)}____//
- `_/      )
- (_(_/-(_/
-            
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Dog(breed : Fox Terrier, name : Milu, color : White, owner : Tintin, tired : False, )</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Milu</span><span class="o">.</span><span class="n">Fight</span><span class="p">(</span><span class="n">Rodger</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>pug barely beats Milu
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Rodger</span><span class="o">.</span><span class="n">Fight</span><span class="p">(</span><span class="n">Milu</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>pug wins, the other dog was exhausted!
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>ERROR 1: PROJ: proj_create_from_database: Open of /opt/conda/share/proj failed
 </pre>
 </div>
 </div>
@@ -17117,7 +14632,79 @@ o&#39;&#39;)}____//
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Rodger</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s1">&#39;Rodger&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">quads_localfile</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;work/data/elevation_quads.geojson&#39;</span><span class="p">)</span>
+<span class="n">msa_localfile</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;work/data/msa1999_boundaries.shp&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">elevation_quads</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">quads_localfile</span><span class="p">)</span>
+<span class="n">msa_1999</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">msa_localfile</span><span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">elevation_quads</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bounds</span> <span class="o">=</span> <span class="n">msa_1999</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">elevation_quads</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">dissolve</span><span class="p">()</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">elevation_quads</span> <span class="o">=</span> <span class="n">elevation_quads</span><span class="o">.</span><span class="n">cx</span><span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1">#Trim elevation quads to the extent of the conterminous USA</span>
+<span class="n">truelist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elevation_quads</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">elevation_quads</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">downloadUrl</span>
+    <span class="n">truelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">elevation_quads</span> <span class="o">=</span> <span class="n">elevation_quads</span><span class="p">[</span><span class="n">truelist</span><span class="p">]</span> <span class="c1">#Remove empty elements from the geodataframe</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_raster</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">elevation_quads</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">downloadUrl</span><span class="p">)</span>
+<span class="n">sample_array</span> <span class="o">=</span> <span class="n">sample_raster</span><span class="o">.</span><span class="n">read</span><span class="p">()[</span><span class="mi">0</span><span class="p">,:,:]</span>
 </pre></div>
 
      </div>
@@ -17133,7 +14720,8 @@ o&#39;&#39;)}____//
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Milu</span><span class="o">.</span><span class="n">Rest</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">elevation_quads</span> <span class="o">=</span> <span class="n">elevation_quads</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">msa_1999</span><span class="p">[[</span><span class="s1">&#39;Indianapolis&#39;</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">msa_1999</span><span class="o">.</span><span class="n">NAME</span><span class="p">]])</span>
+<span class="n">elevation_quads</span>
 </pre></div>
 
      </div>
@@ -17151,13 +14739,119 @@ o&#39;&#39;)}____//
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Milu rested, he&#39;s ready to fight again
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>label</th>
+      <th>available</th>
+      <th>downloadUrl</th>
+      <th>websiteUrl</th>
+      <th>size</th>
+      <th>geometry</th>
+      <th>index_right</th>
+      <th>FIPS</th>
+      <th>Cnt_FIPS</th>
+      <th>NAME</th>
+      <th>AREA_HA</th>
+      <th>XCOORD</th>
+      <th>YCOORD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>86</th>
+      <td>USGS 1 Arc Second n40w086 20210617</td>
+      <td>n40w086</td>
+      <td>true</td>
+      <td>https://prd-tnm.s3.amazonaws.com/StagedProduct...</td>
+      <td>https://www.sciencebase.gov/catalog/item/60d2c...</td>
+      <td>50 MB</td>
+      <td>POLYGON ((-86.00000 39.00000, -85.00000 39.000...</td>
+      <td>114</td>
+      <td>3480</td>
+      <td>1</td>
+      <td>Indianapolis, IN</td>
+      <td>917267</td>
+      <td>-86.117349</td>
+      <td>39.807328</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>USGS 1 Arc Second n40w087 20210617</td>
+      <td>n40w087</td>
+      <td>true</td>
+      <td>https://prd-tnm.s3.amazonaws.com/StagedProduct...</td>
+      <td>https://www.sciencebase.gov/catalog/item/60d2c...</td>
+      <td>53 MB</td>
+      <td>POLYGON ((-87.00000 39.00000, -86.00000 39.000...</td>
+      <td>114</td>
+      <td>3480</td>
+      <td>1</td>
+      <td>Indianapolis, IN</td>
+      <td>917267</td>
+      <td>-86.117349</td>
+      <td>39.807328</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>USGS 1 Arc Second n41w086 20210617</td>
+      <td>n41w086</td>
+      <td>true</td>
+      <td>https://prd-tnm.s3.amazonaws.com/StagedProduct...</td>
+      <td>https://www.sciencebase.gov/catalog/item/60d2c...</td>
+      <td>49 MB</td>
+      <td>POLYGON ((-86.00000 40.00000, -85.00000 40.000...</td>
+      <td>114</td>
+      <td>3480</td>
+      <td>1</td>
+      <td>Indianapolis, IN</td>
+      <td>917267</td>
+      <td>-86.117349</td>
+      <td>39.807328</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>USGS 1 Arc Second n41w087 20210617</td>
+      <td>n41w087</td>
+      <td>true</td>
+      <td>https://prd-tnm.s3.amazonaws.com/StagedProduct...</td>
+      <td>https://www.sciencebase.gov/catalog/item/60d2c...</td>
+      <td>50 MB</td>
+      <td>POLYGON ((-87.00000 40.00000, -86.00000 40.000...</td>
+      <td>114</td>
+      <td>3480</td>
+      <td>1</td>
+      <td>Indianapolis, IN</td>
+      <td>917267</td>
+      <td>-86.117349</td>
+      <td>39.807328</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -17172,46 +14866,8 @@ o&#39;&#39;)}____//
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Milu</span><span class="o">.</span><span class="n">Fight</span><span class="p">(</span><span class="n">Rodger</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rodger beats the shit out of Milu
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Milu</span><span class="o">.</span><span class="n">tired</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">elevation_bounds</span> <span class="o">=</span> <span class="n">elevation_quads</span><span class="o">.</span><span class="n">dissolve</span><span class="p">()</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">elevation_bounds</span>
 </pre></div>
 
      </div>
@@ -17235,7 +14891,7 @@ o&#39;&#39;)}____//
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
+<pre>array([-87.,  39., -85.,  41.])</pre>
 </div>
 
 </div>
@@ -17244,7 +14900,20 @@ o&#39;&#39;)}____//
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>sample_array.shape</p>
+<p>(3612, 3612)</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17252,113 +14921,12 @@ o&#39;&#39;)}____//
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tintin</span><span class="o">.</span><span class="n">Walk</span><span class="p">(</span><span class="n">dog</span> <span class="o">=</span> <span class="n">Milu</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">transform_copy</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">from_bounds</span><span class="p">(</span><span class="n">elevation_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">elevation_bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">elevation_bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">elevation_bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Tintin walks Milu
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tintin</span><span class="o">.</span><span class="n">Walk</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Tintin takes a  stroll
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tintin</span><span class="o">.</span><span class="n">Pet</span><span class="p">(</span><span class="n">Rodger</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Tintin pets pug, it seems to like them very much!
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -17369,7 +14937,7 @@ o&#39;&#39;)}____//
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Amelia</span> <span class="o">=</span> <span class="n">Human</span><span class="p">(</span><span class="s1">&#39;Amelia&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">download_path</span> <span class="o">=</span> <span class="s1">&#39;work/data/indianapolis_elevation.tif&#39;</span>
 </pre></div>
 
      </div>
@@ -17377,6 +14945,18 @@ o&#39;&#39;)}____//
 </div>
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Do the big download:</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17385,7 +14965,40 @@ o&#39;&#39;)}____//
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Milu</span><span class="o">.</span><span class="n">Fight</span><span class="p">(</span><span class="n">Tintin</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">big_elevation_raster</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">download_path</span><span class="p">,</span> 
+        <span class="s1">&#39;w&#39;</span><span class="p">,</span> 
+        <span class="n">driver</span> <span class="o">=</span> <span class="s2">&quot;GTiff&quot;</span><span class="p">,</span> 
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">sample_array</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> 
+        <span class="n">height</span> <span class="o">=</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">nodata</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> 
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">crs</span> <span class="o">=</span> <span class="n">elevation_quads</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+        <span class="n">transform</span> <span class="o">=</span> <span class="n">transform_copy</span><span class="p">,</span>
+        <span class="n">compress</span> <span class="o">=</span> <span class="s1">&#39;DEFLATE&#39;</span><span class="p">,</span>
+        <span class="n">tiled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+        <span class="n">blockxsize</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> 
+        <span class="n">blockysize</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> 
+        <span class="n">BIGTIFF</span><span class="o">=</span><span class="s1">&#39;YES&#39;</span><span class="p">)</span>
+<span class="n">big_elevation_raster</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">##Create the raster and close it</span>
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">download_path</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">big_elevation_raster</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading elevation model to big geotiff&quot;</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">elevation_quads</span><span class="o">.</span><span class="n">index</span><span class="p">),</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Progress&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elevation_quads</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">elevation_quads</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">downloadUrl</span>  <span class="c1">#Get URL of geotiff</span>
+        <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">rasterio_to_write</span><span class="p">:</span> <span class="c1">#Open geotiff</span>
+            <span class="n">bounds_to_write</span> <span class="o">=</span> <span class="n">elevation_quads</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">bounds</span>
+            <span class="c1">#get bounds of geotiff to write</span>
+            <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">rowcol</span><span class="p">(</span><span class="n">transform_copy</span><span class="p">,</span> <span class="p">(</span><span class="n">bounds_to_write</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds_to_write</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="p">(</span><span class="n">bounds_to_write</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds_to_write</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> 
+            <span class="c1">#Get the columns and rows in big_elevation_raster from its transform and the bounds of the elevation geotiff</span>
+            <span class="n">data_to_write</span> <span class="o">=</span> <span class="n">rasterio_to_write</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="o">.</span><span class="n">from_slices</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3606</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3606</span><span class="p">)))</span> <span class="c1">#read the data itself</span>
+            <span class="n">writewindow</span> <span class="o">=</span> <span class="n">Window</span><span class="o">.</span><span class="n">from_slices</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span>
+            <span class="n">big_elevation_raster</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data_to_write</span><span class="p">,</span> <span class="n">window</span> <span class="o">=</span> <span class="n">writewindow</span><span class="p">)</span>
+        <span class="n">counter</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">counter</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">64</span><span class="p">]</span>
+    <span class="n">big_elevation_raster</span><span class="o">.</span><span class="n">build_overviews</span><span class="p">(</span><span class="n">factors</span><span class="p">,</span> <span class="n">Resampling</span><span class="o">.</span><span class="n">nearest</span><span class="p">)</span>
+    <span class="n">big_elevation_raster</span><span class="o">.</span><span class="n">update_tags</span><span class="p">(</span><span class="n">ns</span><span class="o">=</span><span class="s1">&#39;rio_overview&#39;</span><span class="p">,</span> <span class="n">resampling</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17407,8 +15020,19 @@ o&#39;&#39;)}____//
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Milu was too tired to fight, he needs to rest!
+<pre>Downloading elevation model to big geotiff
 </pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>Progress: 100%|███████████████████████████████████████████████████████████████████████████| 4/4 [01:01&lt;00:00, 15.00s/it]</pre>
 </div>
 </div>
 
@@ -17424,7 +15048,10 @@ o&#39;&#39;)}____//
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Milu</span><span class="o">.</span><span class="n">Rest</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">download_path</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">elevation</span><span class="p">:</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">64</span><span class="p">]</span>
+    <span class="n">elevation</span><span class="o">.</span><span class="n">build_overviews</span><span class="p">(</span><span class="n">factors</span><span class="p">,</span> <span class="n">Resampling</span><span class="o">.</span><span class="n">nearest</span><span class="p">)</span>
+    <span class="n">elevation</span><span class="o">.</span><span class="n">update_tags</span><span class="p">(</span><span class="n">ns</span><span class="o">=</span><span class="s1">&#39;rio_overview&#39;</span><span class="p">,</span> <span class="n">resampling</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17445,298 +15072,10 @@ o&#39;&#39;)}____//
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Milu rested, he&#39;s ready to fight again
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>Progress: 100%|███████████████████████████████████████████████████████████████████████| 4/4 [1:58:55&lt;00:00, 1783.91s/it]
 </pre>
 </div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tintin</span><span class="o">.</span><span class="n">Greet</span><span class="p">(</span><span class="n">Milu</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Tintin greets Milu
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tintin</span><span class="o">.</span><span class="n">Pet</span><span class="p">(</span><span class="n">Amelia</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Tintin, you cannot pet a Homo Sapiens like they&#39;re a dog!
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tintin</span><span class="o">.</span><span class="n">Walk</span><span class="p">(</span><span class="n">dog</span> <span class="o">=</span> <span class="n">Amelia</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Tintin , you cannot walk a Homo Sapiens like they are a dog!
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tintin</span><span class="o">.</span><span class="n">Rest</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Tintin has rested
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Rodger</span><span class="o">.</span><span class="n">Bark</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Woof! Woof! Woof! Woof! 
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Chaos</span><span class="p">:</span>
-  <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">  Models the dynamical system :math:`x_{t+1} = r x_t (1 - x_t)`</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-      <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">      Initialize with state x0 and parameter r</span>
-<span class="sd">      &quot;&quot;&quot;</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">x0</span><span class="p">,</span> <span class="n">r</span>
-
-  <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="s2">&quot;Apply the map to update state.&quot;</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-
-  <span class="k">def</span> <span class="nf">generate_sequence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-      <span class="s2">&quot;Generate and return a sequence of length n.&quot;</span>
-      <span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
-      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-          <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-      <span class="k">return</span> <span class="n">path</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mf">2.5</span>
-<span class="k">while</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="n">ch</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">generate_sequence</span><span class="p">(</span><span class="mi">1000</span><span class="p">)[</span><span class="mi">950</span><span class="p">:]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">r</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">,</span> <span class="s1">&#39;b.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mf">0.005</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$r$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x_t$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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"
-class="
-jp-needs-light-background
-"
->
-</div>
-
 </div>
 
 </div>
